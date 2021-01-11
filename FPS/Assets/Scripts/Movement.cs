@@ -11,12 +11,13 @@ public class Movement : MonoBehaviour
 
     Vector3 velocity;
 
-    public float grav = -9.81f * 3;
+    
 
+    public float gravAmplifier = 5;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
     public Transform groundCheck;
-
+    public float grav = -9.81f *  6;
     bool isGrounded;
 
     void Update()
@@ -45,8 +46,5 @@ public class Movement : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
     }
 
-    void FixedUpdate()
-    {
-        
-    }
+    
 }

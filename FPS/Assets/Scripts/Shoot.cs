@@ -8,11 +8,12 @@ public class Shoot : MonoBehaviour
     public Transform firePoint;
 
     public bool canShoot = true;
-    public float cooldown = 0.5f;
-
+    public float cooldown = 0.1f;
+    
+    
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && canShoot)
+        if (Input.GetMouseButton(0) && canShoot)
         {
             Shooting();
             canShoot = false;
@@ -24,7 +25,7 @@ public class Shoot : MonoBehaviour
     {
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
-        rb.AddForce(firePoint.up * 20, ForceMode.Impulse);
+        rb.AddForce(firePoint.up * 30, ForceMode.Impulse);
     }
 
     IEnumerator Cooldown()

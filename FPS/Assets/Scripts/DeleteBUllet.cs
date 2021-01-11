@@ -8,7 +8,7 @@ public class DeleteBUllet : MonoBehaviour
 
     void OnCollisionEnter(Collision ci)
     {
-        if (ci.collider.tag == "Enemy")
+        if (ci.collider.tag != "Player")
         {
             Destroy(bullet);
         }
