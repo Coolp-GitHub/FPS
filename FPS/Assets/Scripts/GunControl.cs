@@ -6,42 +6,70 @@ using UnityEngine;
 
 public class GunControl : MonoBehaviour
 {
-    public GameObject[] Guns;
-    
-    public KeyCode[] keycodes;
+    public KeyCode[] keyCodes;
+    public GameObject[] guns;
+
+    private int selection;
+    private int[] selectNum;
+    private int o = 0;
+
+    void Start()
+     {
+         
+
+        
+
+        
+     }
 
     void Update()
     {
-        int[] selectInt = new int[keycodes.Length];
+        selectNum = new int[keyCodes.Length];
 
-        for (int i = 0; i == keycodes.Length; i++)
-
-        if (Input.GetKeyDown(keycodes[i]))
+        for (int i = 1; i < selectNum.Length; i++)
         {
-            select(selectInt[i]);
+            selectNum[i] = i;
+            
+            guns[i].gameObject.SetActive(false);
+            select();
         }
+       
+
     }
 
     
 
-    void select(int selected)
+    void select()
     {
-        GameObject currentGun = Guns[selected];
-
-        for (int i = 0; i == Guns.Length; i++)
+        
+        for(int i = 0; i < selectNum.Length; i++)
         {
-            int index = Guns.IndexOf(Guns, gun);
 
-            int IndexOfGun = Guns.IndexOf(Guns, gun);
+                if (Input.GetKeyDown(keyCodes[i]))
+                {
+                    selection = selectNum[i];
+                    o = i;
+                    
+                }
+                
+            
+        }
 
-            if (index != IndexOfGun)
+        
+
+        for (int a = 0; a < guns.Length; a++)
+        {
+            if (selection == selectNum[a])
             {
-                currentGun.gameObject.SetActive(false);
+                guns[a].gameObject.SetActive(true);
+
             }
-            else
+            if (selection != selectNum[a])
             {
-                currentGun.gameObject.SetActive(true);
+                guns[a].gameObject.SetActive(false);
             }
         }
+        
+        
     }
 }

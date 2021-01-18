@@ -623,32 +623,32 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a16a4b130e4a574479a943f142aa7076,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.21899998
+      value: 0.219
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a16a4b130e4a574479a943f142aa7076,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.37100014
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a16a4b130e4a574479a943f142aa7076,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.261
+      value: 0.551
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a16a4b130e4a574479a943f142aa7076,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a16a4b130e4a574479a943f142aa7076,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a16a4b130e4a574479a943f142aa7076,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a16a4b130e4a574479a943f142aa7076,
         type: 3}
@@ -1425,10 +1425,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3495f630ae01b994ea8d5b37624e4cd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Guns:
+  keyCodes: 3100000032000000
+  guns:
   - {fileID: 1973849303}
   - {fileID: 1668667886}
-  keycodes: 3100000032000000
 --- !u!1 &1668667886 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a16a4b130e4a574479a943f142aa7076,
@@ -1450,7 +1450,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1668667886}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e22fa71d17d81e744b177a1d4891a166, type: 3}
+  m_Script: {fileID: 11500000, guid: 10dc49bbef7678848ad627dd60b8ed8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 5585378093451643655, guid: 6d1431187c1b0614497609d8a3bf8d8a,
