@@ -7,6 +7,7 @@ public class Shoot : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform firePoint;
 
+    public bool isEquipped;
     public bool canShoot = true;
     public float cooldown = 0.1f;
     
@@ -19,18 +20,21 @@ public class Shoot : MonoBehaviour
             canShoot = false;
             StartCoroutine(Cooldown());
         }
+        
     }
 
     void Shooting()
     {
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
-        rb.AddForce(firePoint.up * 30, ForceMode.Impulse);
+        rb.AddForce(firePoint.up * 20, ForceMode.Impulse);
+        
     }
 
     IEnumerator Cooldown()
     {
         yield return new WaitForSeconds(cooldown);
         canShoot = true;
+        
     }
 }

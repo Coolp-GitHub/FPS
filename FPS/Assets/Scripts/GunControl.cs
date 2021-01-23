@@ -13,14 +13,7 @@ public class GunControl : MonoBehaviour
     private int[] selectNum;
     private int o = 0;
 
-    void Start()
-     {
-         
-
-        
-
-        
-     }
+    
 
     void Update()
     {
@@ -33,6 +26,8 @@ public class GunControl : MonoBehaviour
             guns[i].gameObject.SetActive(false);
             select();
         }
+
+      
        
 
     }
@@ -59,15 +54,28 @@ public class GunControl : MonoBehaviour
 
         for (int a = 0; a < guns.Length; a++)
         {
-            if (selection == selectNum[a])
+            foreach (Transform child in guns[a].transform)
             {
-                guns[a].gameObject.SetActive(true);
+                if (selection == selectNum[a] )
+                {
+                    if (child.name != "FirePoint")
+                    {
+                        guns[a].GetComponent<Shoot>().isEquipped = true;
+                        child.GetComponent<Renderer>().enabled = true;
+                    }
+                }
+                if (selection != selectNum[a])
+                {
+                    if (child.name != "FirePoint")
+                    {
+                        guns[a].GetComponent<Shoot>().isEquipped = false;
+                        child.GetComponent<Renderer>().enabled = false;
+                    }
+                }
+                   
+            }
 
-            }
-            if (selection != selectNum[a])
-            {
-                guns[a].gameObject.SetActive(false);
-            }
+            
         }
         
         
